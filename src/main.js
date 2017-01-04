@@ -1,7 +1,5 @@
 import environment from './environment';
-import 'bootstrap';
-import 'ejButton'
-import 'ejCheckBox'
+import 'syncfusion'
 //import '../node_modules/aurelia-syncfusion-bridge/vendors/css/web/default-theme/ej.web.all.min.css/'
 //Configure Bluebird Promises.
 Promise.config({
