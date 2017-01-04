@@ -1,4 +1,4 @@
-export class MyButton{
+export class ButtonTest{
   constructor() {
     this.normalBtnValue = 'normal';
     this.smallBtnValue = 'small';
