@@ -1,6 +1,6 @@
 import './jsondata';
 
-export class Grid {
+export class LocalGrid {
   constructor(){
   }
   attached(){
