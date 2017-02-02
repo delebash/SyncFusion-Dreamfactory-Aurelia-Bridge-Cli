@@ -1,5 +1,5 @@
 {
-  "name": "AureliaSyncfusionCLIIndex",
+  "name": "SyncFusion-Dreamfactory-AureliaCli",
   "type": "project:application",
   "platform": {
     "id": "web",
@@ -25,18 +25,19 @@
     "source": "src/**/*.html"
   },
   "cssProcessor": {
-    "id": "none",
-    "displayName": "None",
-    "fileExtension": ".css",
-    "source": "src/**/*.css"
+    "id": "sass",
+    "displayName": "Sass",
+    "fileExtension": ".scss",
+    "source": "src/**/*.scss"
   },
   "editor": {
     "id": "webstorm",
     "displayName": "WebStorm"
   },
   "unitTestRunner": {
-    "id": "none",
-    "displayName": "None"
+    "id": "karma",
+    "displayName": "Karma",
+    "source": "test/unit/**/*.js"
   },
   "paths": {
     "root": "src",
@@ -45,6 +46,10 @@
     "attributes": "src/resources/attributes",
     "valueConverters": "src/resources/value-converters",
     "bindingBehaviors": "src/resources/binding-behaviors"
+  },
+  "testFramework": {
+    "id": "jasmine",
+    "displayName": "Jasmine"
   },
   "build": {
     "targets": [
@@ -111,25 +116,9 @@
           "aurelia-templating",
           "aurelia-templating-binding",
           "aurelia-fetch-client",
+          "aurelia-http-client",
           "text",
           "jquery",
-          {
-            "name": "bootstrap",
-            "path": "../node_modules/bootstrap/dist",
-            "main": "js/bootstrap.min",
-            "deps": ["jquery"],
-            "exports": "$",
-            "resources": [
-              "css/bootstrap.css"
-            ]
-          },
-          {
-            "name": "syncfusion",
-            "path": "../node_modules/syncfusion-javascript",
-            "main": "/Scripts/ej/web/ej.web.all.min",
-            "deps": ["jsrender"],
-            "exports": "$"
-          },
           {
             "name": "jsrender",
             "path": "../node_modules/jsrender",
@@ -147,6 +136,7 @@
               "css/bootstrap.css"
             ]
           },
+
           {
             "name": "aurelia-templating-resources",
             "path": "../node_modules/aurelia-templating-resources/dist/amd",
@@ -162,6 +152,68 @@
             "path": "../node_modules/aurelia-testing/dist/amd",
             "main": "aurelia-testing",
             "env": "dev"
+          },
+          {
+            "name": "common/ej.core.min",
+            "path": "../node_modules/aurelia-syncfusion-bridge/vendors/scripts/common",
+            "main": "ej.core.min"
+          },
+          {
+            "name": "common",
+            "path": "../node_modules/aurelia-syncfusion-bridge/dist/amd/common",
+            "main": "common"
+          },
+          {
+            "name": "ejButton",
+            "path": "../node_modules/aurelia-syncfusion-bridge/dist/amd/button",
+            "main": "button"
+          },
+          {
+            "name": "ej.button.min",
+            "path": "../node_modules/aurelia-syncfusion-bridge/vendors/scripts/web",
+            "main": "ej.button.min"
+          },
+
+          {
+            "name": "ejCheckBox",
+            "path": "../node_modules/aurelia-syncfusion-bridge/dist/amd/checkbox",
+            "main": "checkbox"
+          },
+          {
+            "name": "ej.checkbox.min",
+            "path": "../node_modules/aurelia-syncfusion-bridge/vendors/scripts/web",
+            "main": "ej.checkbox.min"
+          },
+          {
+            "name": "ejRadioButton",
+            "path": "../node_modules/aurelia-syncfusion-bridge/dist/amd/radiobutton",
+            "main": "radiobutton"
+          },
+          {
+            "name": "ej.radiobutton.min",
+            "path": "../node_modules/aurelia-syncfusion-bridge/vendors/scripts/web",
+            "main": "ej.radiobutton.min"
+          },
+          {
+            "name": "ejGrid",
+            "path": "../node_modules/aurelia-syncfusion-bridge/dist/amd/grid",
+            "main": "grid",
+            "resources": [
+              "column.js"
+            ]
+          },
+          {
+            "name": "ej.grid.min",
+            "path": "../node_modules/aurelia-syncfusion-bridge/vendors/scripts",
+            "main": "web/ej.grid.min",
+            "resources": [
+              "common/ej.globalize.min.js"
+            ]
+          },
+          {
+            "name": "ej.data.min",
+            "path": "../node_modules/aurelia-syncfusion-bridge/vendors/scripts",
+            "main": "common/ej.data.min.js"
           }
         ]
       }

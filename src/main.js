@@ -1,6 +1,6 @@
 import environment from './environment';
-import 'syncfusion'
-//import '../node_modules/aurelia-syncfusion-bridge/vendors/css/web/default-theme/ej.web.all.min.css/'
+import 'bootstrap';
+
 //Configure Bluebird Promises.
 Promise.config({
   longStackTraces: environment.debug,

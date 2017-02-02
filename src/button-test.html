@@ -1,66 +1,55 @@
-<template><require from="./styles/default.css"></require>
-  <require from="syncfusion/Content/ej/web/ej.widgets.core.min.css"></require>
-  <require from="syncfusion/Content/ej/web/bootstrap-theme/ej.theme.min.css"></require>
+<template>
+  <require from="styles/default.css"></require>
+  <require from="styles/sfbutton.css"></require>
+  <table class='container-fluid'>
+    <tbody class='container-fluid'>
 
-  <div class="content-container-fluid">
-    <div class="row">
-      <div class="cols-sample-area">
-        <div class="frame">
-          <div class="control">
-            <table>
-              <tr>
-                <th colspan="2" style="padding-left:30px"> Button </th>
-              </tr>
-              <tr>
-                <td> Normal</td>
-                <td class="btnsht">
-                  <button id="button11">login</button>
-                </td>
-              </tr>
-              <tr>
-                <td> Mini</td>
-                <td class="btnsht">
-                  <button id="button21">login</button>
-                </td>
-              </tr>
+    <tr class='row'>
+      <td class='col-md-4'> Normal</td>
+      <td class='col-md-4'>
+        <button id="normalBtn"
+                ej-button="e-size.bind: normalBtnValue;
+                        e-show-rounded-corner.bind: roundedCorner;
+                        e-content-type: imageonly;
+                        e-prefix-icon: e-icon e-uiLight e-handup"></button>
+      </td>
+    </tr>
+    <tr class='row'>
+      <td class='col-md-4'> Mini</td>
+      <td class='col-md-4'>
+        <button id="miniBtn" ej-button="e-size.bind: miniBtnValue;
+                        e-show-rounded-corner.bind: roundedCorner;
+                        e-text: login"></button>
+      </td>
+    </tr>
 
-              <tr>
-                <td> Small</td>
-                <td class="btnsht">
-                  <button id="button31">login</button>
-                </td>
-              </tr>
-              <tr>
-                <td> Medium</td>
-                <td class="btnsht">
-                  <button id="button41">login</button>
-                </td>
-              </tr>
+    <tr class='row'>
+      <td class='col-md-4'> Small</td>
+      <td class='col-md-4'>
+        <button id="smallBtn" ej-button="e-size.bind: smallBtnValue;
+                        e-show-rounded-corner.bind: roundedCorner;
+                        e-text: login"></button>
+      </td>
+    </tr>
+    <tr class='row'>
+      <td class='col-md-4'> Medium</td>
+      <td class='col-md-4'>
+        <button id="mediumBtn" ej-button="e-size.bind: mediumBtnValue;
+                        e-show-rounded-corner.bind: roundedCorner;
+                        e-text: login"></button>
+      </td>
+    </tr>
 
-              <tr>
-                <td> Large</td>
-                <td class="btnsht">
-                  <button id="button51">login</button>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-    <style>
-      .e-bgdefault:hover .e-buttondiv .e-icon.e-uiLight, .e-bgdefault:active .e-buttondiv .e-icon.e-uiLight {
-        background-image: url('../content/ejthemes/common-images/icons-white.png');
-      }
-      .control{
-        padding: 30px;
-      }
-      td{
-        padding:5px;
-      }
-      .frame{
-        padding: 0 20px;
-      }
-
-    </style>
+    <tr class='row'>
+      <td class='col-md-4'> Large</td>
+      <td class='col-md-4'>
+        <button id="largeBtn" ej-button="e-size.bind: largeBtnValue;
+                        e-show-rounded-corner.bind: roundedCorner;
+                        e-content-type: textandimage;
+                        e-prefix-icon: e-icon e-uiLight e-handup;
+                        e-text: login"></button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </template>
