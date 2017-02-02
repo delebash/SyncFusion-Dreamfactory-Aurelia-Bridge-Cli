@@ -1,39 +1,40 @@
 import {HttpClient, json} from 'aurelia-fetch-client';
 import {inject} from 'aurelia-framework';
-import Utils from './utils';
-import dreamfactoryconfig from './dreamfactoryconfig';
+import {Utils} from './utils';
+import  dreamfactoryconfig from './dreamfactoryconfig'
 
 
 let httpClient = new HttpClient();
 httpClient.configure(config => {
   config
-    .useStandardConfiguration();
-    });
+    .useStandardConfiguration()
+});
 
 @inject(HttpClient)
 export class DreamFactoryApi {
   constructor(http) {
     this.http = http;
   }
+
   login() {
-    let that =this;
-    this.http.fetch(dreamfactoryconfig.loginurl(), {
+    return this.http.fetch(dreamfactoryconfig.loginurl(), {
       method: "POST",
       body: json(dreamfactoryconfig.credentials())
     })
       .then(response => response.json())
       .then(data => {
-        if(data.hasOwnProperty('session_token')) {
+        if (data.hasOwnProperty('session_token')) {
           Utils.setToken(dreamfactoryconfig.tokenKey, data.session_token);
-          console.log(data);
-         that.getdata();
+          return data
         }
       });
   }
 
+
   getdata() {
     let token = Utils.getToken(dreamfactoryconfig.tokenKey);
-      this.http.fetch(dreamfactoryconfig.dataurl(), {
+
+    return this.http.fetch(dreamfactoryconfig.dataurl(), {
       method: "POST",
       body: json(dreamfactoryconfig.credentials()),
       headers: new Headers({
@@ -43,7 +44,23 @@ export class DreamFactoryApi {
     })
       .then(response => response.json())
       .then(data => {
-          console.log(data);
+        return data;
       })
   }
 }
+
+// login() {
+//   return this.http.fetch(dreamfactoryconfig.loginurl(), {
+//     method: "POST",
+//     body: json(dreamfactoryconfig.credentials())
+//   })
+//     .then(response => response.json())
+//     .then(data => {
+//       if (data.hasOwnProperty('session_token')) {
+//         Utils.setToken(dreamfactoryconfig.tokenKey, data.session_token);
+//         return true
+//       } else {
+//         return false
+//       }
+//     });
+// }
